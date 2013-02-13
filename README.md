@@ -23,7 +23,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When you `require 'windowtint'`, here's what it does:
+
+1. Checks if it's running on Windows, and if not, returns immediately (since Windowtint applies only to Windows).
+2. Checks the environment for ANSICON, and returns immediately if it's available.
+3. Attempts to load win32console (including its standard output redirection), and returns if it's available.
+4. If both fail, warns the user that color output will not work properly until the ANSICON driver or the win32console
+   gem are installed, then returns.
+
+Your script then runs as usual.  Any code you already have that checks for ANSICON or tries to load win32console
+can be removed.  Windowtint's got your back!
 
 ## FAQ
 
