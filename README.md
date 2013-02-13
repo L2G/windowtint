@@ -34,7 +34,14 @@ When you `require 'windowtint'`, here's what it does:
 Your script then runs as usual.  Any code you already have that checks for ANSICON or tries to load win32console
 can be removed.  Windowtint's got your back!
 
+If you need to check which color support Windowtint was able to find, call `Windowtint.enabled`.  It will
+return `:ansicon`, `:win32console`, or nil (so you can treat it in Boolean fashion).
+
 ## FAQ
+
+### What if I don't want to declare a dependency on win32console in my gemspec?
+
+You don't have to.  That's why Windowtint is here!  (You still have to declare a dependency on Windowtint, of course.)
 
 ### Why not just tell everyone to use ANSICON and be done with it?
 
@@ -42,6 +49,10 @@ Because not everyone can use ANSICON.  ANSICON is a system-level driver that has
 be installed by hand alongside other Windows drivers.  Some environments (schools,
 laboratories, etc.) have stringent usage policies that forbid users tampering with
 operating system files.
+
+If ANSICON is already installed, Windowtint will get out of its way.  If win32console
+is installed, Windowtint will turn it on.  If neither is available, it will give helpful
+information to the user telling them what to do.
 
 ## Contributing
 
