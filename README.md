@@ -4,8 +4,7 @@ Windowtint sweats the details of enabling color (ANSI) output in Windows -- so y
 
 ## Notice
 
-This gem is still in development.  It's functional, but it hasn't been packaged yet.  (Release early and often,
-you know!)
+This gem is still in development.  It's functional but not yet battle-tested.
 
 ## Usage
 
