@@ -2,11 +2,13 @@
 *.rbc
 .bundle
 .config
+.idea
 .yardoc
 InstalledFiles
 _yardoc
 coverage
 doc/
+gem-private.pem
 lib/bundler/man
 pkg
 rdoc
