@@ -8,14 +8,17 @@ Gem::Specification.new do |gem|
   gem.version       = Windowtint::VERSION
   gem.authors       = ["Larry Gilbert"]
   gem.email         = ["larry@L2G.to"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{Handles dependencies for color (ANSI) output on Windows so you don't have to}
-  gem.homepage      = ""
+  gem.description   = %q{Windowtint looks for ANSI color output options on Windows systems.
+                         If ANSICON or win32console are available, it uses them. Otherwise,
+                         it advises users to intall one or the other.}
+  gem.summary       = %q{Handles dependencies for ANSI color output on Windows so you don't have to}
+  gem.homepage      = "https://github.com/L2G/windowtint"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency('win32console')
+  gem.signing_key   = 'gem-private.pem'  if File.exist?('gem-private.pem')
+  gem.cert_chain    = ['gem-public.pem'] if File.exist?('gem-public.pem')
 end
