@@ -35,7 +35,8 @@ Your script then runs as usual.  Any code you already have that checks for ANSIC
 can be removed.  Windowtint's got your back!
 
 If you need to check which color support Windowtint was able to find, call `Windowtint.enabled`.  It will
-return `:ansicon`, `:win32console`, or nil (so you can treat it in Boolean fashion).
+return `:ansicon`, `:win32console`, `:non_windows`, or nil (so you can treat it in Boolean fashion).
+Symbols should be self-explanatory.
 
 ## FAQ
 
